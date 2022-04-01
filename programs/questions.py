@@ -35,7 +35,12 @@
 
 
 def one(input1, input2):
-    return ""
+    if len(input1) > len(input2): # outcome if input1 is longger than input2
+        return input1
+    elif len(input2) > len(input1):
+        return input2
+    else:                        # this will be returned if inputs same length
+        return input1 + " " + input2
 
    # <QUESTION 2>
 
@@ -61,6 +66,7 @@ def one(input1, input2):
 
 
 def two(input):
+    
     return ""
 
 
@@ -83,9 +89,16 @@ def two(input):
 
     # No Hints for this question
 
-
 def three(arg1):
-    return ""
+    
+    if arg1 % 3 == 0 and arg1 % 5 == 0: # start by filtering if both are true first
+        return "fizzbuzz"
+    elif arg1 % 3 == 0:
+        return "fizz"
+    elif arg1 % 5 == 0:
+        return "buzz"
+    else:
+        return "null" # will be returned if arg1 is not divisible by 3 or 5
 
     # <QUESTION 4>
 
@@ -111,6 +124,8 @@ def three(arg1):
 
 
 def four(arg1):
+    pre_list = int(arg1.split(" ")) # splitting string on spacesand converting to integers
+    
     return ""
 
     # <QUESTION 5>
@@ -161,7 +176,10 @@ def five(input):
 
 
 def six(input):
-    return ""
+    if "ie" in input:
+        return True
+    else:
+        return False
 
     # <QUESTION 7>
 
@@ -179,7 +197,14 @@ def six(input):
 
 
 def seven(input):
-    return ""
+    vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
+    counter = 0
+    for letter in input:
+        for vowel in vowels:
+            if letter == vowel:
+                counter += 1
+    return counter
+    
 
     # <QUESTION 8>
 
@@ -220,7 +245,9 @@ def eight(input):
 
 
 def nine(inputString, char):
-    return ""
+    result = inputString.index(char)
+    return result
+    
 
     # <QUESTION 10>
 
@@ -241,4 +268,11 @@ def nine(inputString, char):
 
 
 def ten(string, int, char):
-    return ""
+    int_pos = string[int]
+    char_pos = string.index(int_pos) # this returns the value of the char at int index.
+    if char_pos == char:
+        return True
+    else: 
+        return False
+        
+ 
